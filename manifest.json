@@ -1,13 +1,17 @@
 {
-   "background_page": "background.html",
-   "description": "Share images, links, web pages and selected text on Twitter.com right from the context menu (right click menu).",
+   "background": {
+     "persistent": false,
+	 "scripts": [ "tweetright.js" ]
+   },
+   "description": "Share web pages, selected text, links and images on Twitter easily from the context (right click) menu.",
    "icons": {
+      "128": "128.png",
       "16": "16.png",
-      "32": "32.png", 	
-      "48": "48.png",
-      "128": "128.png"
+      "32": "32.png",
+      "48": "48.png"
    },
    "name": "TweetRight",
    "permissions": [ "contextMenus", "tabs" ],
-   "version": "0.86"
+   "manifest_version": 2,
+   "version": "0.9"
 }

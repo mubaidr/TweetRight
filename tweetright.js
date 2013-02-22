@@ -1,29 +1,35 @@
-var tweettext = chrome.contextMenus.create({"title": "Tweet Selected Text","contexts":["selection"], "onclick": posttwtext});
+// TweetRight Chrome extension by @ArpitNext
+// Homepage: http://blog.arpitnext.com/tweetright
 
-function posttwtext(info, tab) {
-  var posturl="https://twitter.com/intent/tweet?text=SELTEXT via &url="+info.pageUrl;
-  chrome.windows.create({"url":posturl.replace("SELTEXT", encodeURIComponent(info.selectionText)), "type":"popup", "height":300,"width":600});
+// onClicked callback function.
+function onClickHandler(info, tab) {
+  if (info.menuItemId == "selection") {
+    var postUrl = 'https://twitter.com/intent/tweet?text="SELTEXT" &url='+info.pageUrl;
+	chrome.windows.create({"url":postUrl.replace("SELTEXT", encodeURIComponent(info.selectionText)), "type":"popup", "height":300,"width":600});
+  }
+  if (info.menuItemId == "page") {
+    var postUrl = "https://twitter.com/intent/tweet?text="+encodeURIComponent(tab.title)+"&url=SELTEXT";
+	chrome.windows.create({"url":postUrl.replace("SELTEXT", encodeURIComponent(info.pageUrl)), "type":"popup", "height":300,"width":600});
+  }
+  if (info.menuItemId == "link") {
+    var postUrl = "https://twitter.com/intent/tweet?text=[link] &url=SELTEXT";
+	chrome.windows.create({"url":postUrl.replace("SELTEXT", encodeURIComponent(info.linkUrl)), "type":"popup", "height":300,"width":600});
+  }
+  if (info.menuItemId == "image") {
+    var postUrl = "https://twitter.com/intent/tweet?text=[image] &url=SELTEXT";
+	chrome.windows.create({"url":postUrl.replace("SELTEXT", encodeURIComponent(info.srcUrl)), "type":"popup", "height":300,"width":600});
+  }
+};
 
-}
+chrome.contextMenus.onClicked.addListener(onClickHandler);
 
-var tweetlink = chrome.contextMenus.create({"title": "Tweet Link","contexts":["link"], "onclick": posttwlink});
-function posttwlink(info, tab) {
-  var posturl="https://twitter.com/intent/tweet?url=SELTEXT";
-  chrome.windows.create({"url":posturl.replace("SELTEXT", encodeURIComponent(info.linkUrl)), "type":"popup", "height":300,"width":600});
-
-}
-
-var tweetpage = chrome.contextMenus.create({"title": "Tweet Page","contexts":["page"], "onclick": posttwpage});
-function posttwpage(info, tab) {
-  var posturl="https://twitter.com/intent/tweet?text="+encodeURIComponent(tab.title)+"&url=SELTEXT";
-  chrome.windows.create({"url":posturl.replace("SELTEXT", encodeURIComponent(info.pageUrl)), "type":"popup", "height":300,"width":600});
-
-}
-
-var tweetpict = chrome.contextMenus.create({"title": "Tweet Image","contexts":["image"], "onclick": posttwpict});
-function posttwpict(info, tab) {
-  var posturl="https://twitter.com/intent/tweet?text=Image +&url=SELTEXT";
-  chrome.windows.create({"url":posturl.replace("SELTEXT", encodeURIComponent(info.srcUrl)), "type":"popup", "height":300,"width":600});
-
-}
-
+// Setting up context menu items.
+chrome.runtime.onInstalled.addListener(function() {
+  var contexts = ["page","selection","link","image"];
+  for (var i = 0; i < contexts.length; i++) {
+    var context = contexts[i];
+    var title = "Tweet " + context;
+    var id = chrome.contextMenus.create({"title": title, "contexts":[context],
+                                         "id": context});
+										 }
+});
