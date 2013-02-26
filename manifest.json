@@ -1,17 +1,22 @@
 {
    "background": {
-     "persistent": false,
-	 "scripts": [ "tweetright.js" ]
+      "persistent": false,
+      "scripts": [ "tweetright.js" ]
    },
-   "description": "Share web pages, selected text, links and images on Twitter easily from the context (right click) menu.",
+   "browser_action": {
+      "default_icon": "32.png",
+      "default_title": "Share on Twitter"
+   },
+   "description": "Share web pages, selected text, links and images on Twitter easily from the context menu and the toolbar button.",
    "icons": {
       "128": "128.png",
       "16": "16.png",
       "32": "32.png",
       "48": "48.png"
    },
+   "manifest_version": 2,
    "name": "TweetRight",
    "permissions": [ "contextMenus", "tabs" ],
-   "manifest_version": 2,
-   "version": "0.9"
+   "homepage_url": "http://blog.arpitnext.com/tweetright",
+   "version": "0.91"
 }

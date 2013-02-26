@@ -33,3 +33,9 @@ chrome.runtime.onInstalled.addListener(function() {
                                          "id": context});
 										 }
 });
+
+// for toolbar button  
+chrome.browserAction.onClicked.addListener(function(tab) {
+  var postUrl = "https://twitter.com/intent/tweet?text="+encodeURIComponent(tab.title)+" &url=SELTEXT";
+  chrome.windows.create({"url":postUrl.replace("SELTEXT", tab.url), "type":"popup", "height":300,"width":600, "top": 100, "left":100})
+});
