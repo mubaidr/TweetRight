@@ -17,6 +17,6 @@
    "manifest_version": 2,
    "name": "TweetRight",
    "permissions": [ "contextMenus", "tabs" ],
-   "homepage_url": "http://blog.arpitnext.com/tweetright",
-   "version": "0.91"
+   "homepage_url": "http://browserfame.com/tweetright",
+   "version": "0.95"
 }
