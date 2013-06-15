@@ -24,15 +24,12 @@ function onClickHandler(info, tab) {
 chrome.contextMenus.onClicked.addListener(onClickHandler);
 
 // Setting up context menu items.
-chrome.runtime.onInstalled.addListener(function() {
-  var contexts = ["page","selection","link","image"];
-  for (var i = 0; i < contexts.length; i++) {
-    var context = contexts[i];
-    var title = "Tweet " + context;
-    var id = chrome.contextMenus.create({"title": title, "contexts":[context],
-                                         "id": context});
-  }
-});
+var contexts = ["page","selection","link","image"];
+for (var i = 0; i < contexts.length; i++) {
+  var context = contexts[i];
+  var title = "Tweet " + context;
+  var id = chrome.contextMenus.create({"title": title, "contexts":[context], "id": context});
+}
 
 // for toolbar button  
 chrome.browserAction.onClicked.addListener(function(tab) {
