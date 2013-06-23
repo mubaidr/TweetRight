@@ -1,5 +1,5 @@
 // TweetRight Chrome extension by @ArpitNext
-// Homepage: http://browserfame.com/tweetright
+// Homepage: https://github.com/mubaidr/TweetRight+/
 
 // onClicked callback function.
 function onClickHandler(info, tab) {
@@ -27,7 +27,7 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 var contexts = ["page","selection","link","image"];
 for (var i = 0; i < contexts.length; i++) {
   var context = contexts[i];
-  var title = "Tweet " + context;
+  var title = "Tweet this " + context;
   var id = chrome.contextMenus.create({"title": title, "contexts":[context], "id": context});
 }
 
