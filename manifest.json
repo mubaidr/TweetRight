@@ -14,7 +14,7 @@
    "name": "TweetRight +",
    "permissions": [ "contextMenus", "tabs" ],
    "homepage_url": "https://github.com/mubaidr/TweetRight/",
-   "version": "0.97",
+   "version": "0.98",
    "developer" : {
 		"name" : "mubaidr"
 	}
