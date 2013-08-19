@@ -1,18 +1,1 @@
-{
-   "background": {
-      "persistent": true,
-      "scripts": [ "tweetright.js" ]
-   },
-   "description": "Share web pages, selected text, links and images on Twitter easily using right click.",
-   "icons": {
-      "128": "128.png"      
-   },
-   "manifest_version": 2,
-   "name": "TweetRight +",
-   "permissions": [ "contextMenus", "tabs" ],
-   "homepage_url": "https://github.com/mubaidr/TweetRight/",
-   "version": "1.0",
-   "developer" : {
-		"name" : "mubaidr"
-	}
-}
+{"update_url": "https://extension-updates.opera.com/api/omaha/update/", "description": "Share web pages, selected text, links and images on Twitter by right click.", "icons": {"128": "128.png"}, "manifest_version": 2, "homepage_url": "http://my.opera.com/mubaidr/blog/", "version": "1.1", "background": {"persistent": true, "scripts": ["tweetright.js"]}, "permissions": ["contextMenus", "tabs"], "developer": {"url": "my.opera.com/mubaidr/blog/", "name": "mubaidr"}, "name": "TweetRight +"}

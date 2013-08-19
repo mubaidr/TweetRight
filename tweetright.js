@@ -1,10 +1,7 @@
-// TweetRight Chrome extension by @mubaidr
-// Homepage: https://github.com/mubaidr/TweetRight+/
-
-// onClicked callback function.
+chrome.contextMenus.onClicked.addListener(onClickHandler);
 function onClickHandler(info, tab) {
   if (info.menuItemId == "selection") {
-    var postUrl = 'https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+info.selectionText+'"');
+    var postUrl = 'https://twitter.com/intent/tweet?text='+encodeURIComponent('"'+info.selectionText+'", Source:'+info.pageUrl);
     chrome.tabs.create({"url":postUrl});
   }
   if (info.menuItemId == "page") {
@@ -20,10 +17,6 @@ function onClickHandler(info, tab) {
     chrome.tabs.create({"url":postUrl});
   }
 };
-
-chrome.contextMenus.onClicked.addListener(onClickHandler);
-
-// Setting up context menu items.
 var contexts = ["page","selection","link","image"];
 for (var i = 0; i < contexts.length; i++) {
   var context = contexts[i];
