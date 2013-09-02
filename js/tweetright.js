@@ -18,7 +18,7 @@ function onClickHandler(info, tab) {
 		break;
 	}
 	if (txt_hash) {
-		postUrl = postUrl + '&hashtags=' + postUrl;
+		postUrl = postUrl + '&hashtags=' + txt_hash;
 	}
 	chrome.tabs.create({
 		"url" : postUrl
