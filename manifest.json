@@ -15,8 +15,8 @@
       "48": "48.png"
    },
    "manifest_version": 2,
-   "name": "TweetRight",
-   "permissions": [ "contextMenus", "tabs" ],
-   "homepage_url": "http://browserfame.com/tweetright",
-   "version": "0.96"
+   "name": "Share on Twitter",
+   "permissions": [ "contextMenus", "activeTab" ],
+   "homepage_url": "http://browsernative.com/extensions/",
+   "version": "0.99"
 }
