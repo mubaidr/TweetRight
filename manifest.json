@@ -11,7 +11,7 @@
 		"scripts" : ["js/tweetright.js"]
 	},
 	"options_page" : "html/option.html",
-	"permissions" : ["contextMenus", "tabs", "storage"],
+	"permissions" : ["contextMenus", "activeTab", "storage"],
 	"developer" : {
 		"url" : "my.opera.com/mubaidr/blog/",
 		"name" : "mubaidr"
