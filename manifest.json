@@ -1,14 +1,14 @@
 {
 	"background": {
       "persistent": false,
-      "scripts": [ "script.js" ]
+      "scripts": [ "js/background.js" ]
    },
    "browser_action": {
       "default_icon": "static/32.png",
       "default_title": "Share on Twitter"
    },
-   "description": "Share web pages, selected text and links on Twitter using the toolbar button, keyboard command and context menu option.",
-   "homepage_url": "https://browsernative.com/share-on-twitter-chrome-extension/",
+   "description": "Easily share current tab, links and selected text on Twitter, using toolbar button, keyboard command and context menu options.",
+   "homepage_url": "https://browsernative.com/share-on-twitter/",
    "icons": {
       "128": "static/128.png",
       "16": "static/16.png",
@@ -18,7 +18,8 @@
    "manifest_version": 2,
    "name": "Share on Twitter",
    "permissions": [ "contextMenus", "activeTab" ],
-   "version": "1.9",
+   "version": "2.0",
+	 "options_ui": {"page": "options.html"},
    "commands": {
      "_execute_browser_action": {
        "suggested_key": {
